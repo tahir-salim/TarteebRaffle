@@ -1,0 +1,20 @@
+:root {
+    --primary: #454372;
+    --primary-dark: #454372;
+    --primary-70: #454372;
+    --primary-50: #454372;
+    --primary-30: #454372;
+    --primary-10: #454372;
+    --logo: #be8f4a;
+}
+
+.bg-grad-sidebar {
+    background-image: -webkit-gradient( linear, left bottom, left top, from(#454372), to(#3c4655));
+    background-image: linear-gradient( 0deg, #454372, rgba(69, 67, 114, 0.967));
+}
+
+button[dusk='update-and-continue-editing-button'],
+button[dusk='create-and-add-another-button'],
+button[dusk='attach-and-attach-another-button'] {
+    display: none;
+}

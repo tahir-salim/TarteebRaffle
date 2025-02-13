@@ -1,0 +1,76 @@
+models:
+    User:
+        id: increments
+        role: enum comment:"ADMIN,STAFF"
+        name: string
+        email: string nullable
+        is_active: boolean
+        created_at: integer
+        location_id: bigInteger
+        updated_at: integer
+        deleted_at: integer nullable
+    Country:
+        id: increments
+        name: string
+        country_code: string
+        phone_code: integer
+        phone_digits: integer nullable
+        created_at: dateTime
+        updated_at: dateTime
+    Raffle:
+        id: increments
+        name: string
+        start_date: dateTime
+        end_date: dateTime
+        created_at: dateTime
+        updated_at: dateTime
+        deleted_at: dateTime nullable
+    Shop:
+        id: increments
+        name: string
+        is_active: boolean
+        created_at: dateTime
+        updated_at: dateTime
+        deleted_at: dateTime nullable
+    Receipt:
+        id: increments
+        customer_id: bigInteger
+        shop_id: bigInteger
+        receipt_number: string
+        purchase_date: dateTime
+        amount: float
+        created_by_user_id: bigInteger
+        created_at: integer
+        updated_at: integer
+        deleted_at: integer
+    Customer:
+        id: increments
+        name: string
+        cpr: string
+        phone: integer
+        email: string nullable
+        country_id: integer
+    RaffleWinner:
+        id: increments
+        raffle_id: integer
+        customer_id: integer
+        created_at: integer
+        updated_at: integer
+    Location:
+        id: increments
+        name: string
+    Setting:
+        id: increments
+        name: string
+        value: text
+    SmsLog:
+        id: increments
+        customer_id: dateTime
+        phone: string
+        message: string
+        created_at: dateTime
+        updated_at: dateTime
+    Campaign:
+        id: increments
+        name: string
+        logo: string

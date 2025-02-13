@@ -1,0 +1,57 @@
+created:
+    - database/factories/UserFactory.php
+    - database/factories/CountryFactory.php
+    - database/factories/RaffleFactory.php
+    - database/factories/ShopFactory.php
+    - database/factories/ReceiptFactory.php
+    - database/factories/CustomerFactory.php
+    - database/factories/RaffleWinnerFactory.php
+    - database/factories/LocationFactory.php
+    - database/factories/SettingFactory.php
+    - database/factories/SmsLogFactory.php
+    - database/factories/CampaignFactory.php
+    - database/migrations/2022_03_11_132236_create_users_table.php
+    - database/migrations/2022_03_11_132237_create_countries_table.php
+    - database/migrations/2022_03_11_132238_create_raffles_table.php
+    - database/migrations/2022_03_11_132239_create_shops_table.php
+    - database/migrations/2022_03_11_132240_create_receipts_table.php
+    - database/migrations/2022_03_11_132241_create_customers_table.php
+    - database/migrations/2022_03_11_132242_create_raffle_winners_table.php
+    - database/migrations/2022_03_11_132243_create_locations_table.php
+    - database/migrations/2022_03_11_132244_create_settings_table.php
+    - database/migrations/2022_03_11_132245_create_sms_logs_table.php
+    - database/migrations/2022_03_11_132246_create_campaigns_table.php
+    - app/Models/User.php
+    - app/Models/Country.php
+    - app/Models/Raffle.php
+    - app/Models/Shop.php
+    - app/Models/Receipt.php
+    - app/Models/Customer.php
+    - app/Models/RaffleWinner.php
+    - app/Models/Location.php
+    - app/Models/Setting.php
+    - app/Models/SmsLog.php
+    - app/Models/Campaign.php
+    - app/Nova/User.php
+    - app/Nova/Country.php
+    - app/Nova/Raffle.php
+    - app/Nova/Shop.php
+    - app/Nova/Receipt.php
+    - app/Nova/Customer.php
+    - app/Nova/RaffleWinner.php
+    - app/Nova/Location.php
+    - app/Nova/Setting.php
+    - app/Nova/SmsLog.php
+    - app/Nova/Campaign.php
+models:
+    User: { id: increments, role: 'enum comment:"ADMIN,STAFF"', name: string, email: 'string nullable', is_active: boolean, created_at: integer, location_id: bigInteger, updated_at: integer, deleted_at: 'integer nullable' }
+    Country: { id: increments, name: string, country_code: string, phone_code: integer, phone_digits: 'integer nullable', created_at: dateTime, updated_at: dateTime }
+    Raffle: { id: increments, name: string, start_date: dateTime, end_date: dateTime, created_at: dateTime, updated_at: dateTime, deleted_at: 'dateTime nullable' }
+    Shop: { id: increments, name: string, is_active: boolean, created_at: dateTime, updated_at: dateTime, deleted_at: 'dateTime nullable' }
+    Receipt: { id: increments, customer_id: bigInteger, shop_id: bigInteger, receipt_number: string, purchase_date: dateTime, amount: float, created_by_user_id: bigInteger, created_at: integer, updated_at: integer, deleted_at: integer }
+    Customer: { id: increments, name: string, cpr: string, phone: integer, email: 'string nullable', country_id: integer }
+    RaffleWinner: { id: increments, raffle_id: integer, customer_id: integer, created_at: integer, updated_at: integer }
+    Location: { id: increments, name: string }
+    Setting: { id: increments, name: string, value: text }
+    SmsLog: { id: increments, customer_id: dateTime, phone: string, message: string, created_at: dateTime, updated_at: dateTime }
+    Campaign: { id: increments, name: string, logo: string }
